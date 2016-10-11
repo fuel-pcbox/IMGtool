@@ -1,2 +1,11 @@
+CXX = g++
+CXXFLAGS = -std=c++11 
+prefix=/usr
+
 all:
-	g++ -std=c++0x imgtool.cpp -o imgtool
+	$(CXX) $(CXXFLAGS) imgtool.cpp -o imgtool
+
+install: all
+	install -m 755 imgtool $(prefix)/bin
+
+.PHONY: install
